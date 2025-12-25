@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Placement Operations Copilot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+    <div class="nav-left">
+        <div class="logo">🧠</div>
+        <div>
+            <h1>Placement Operations Copilot</h1>
+            <span>Local, Rule-Based Agentic AI • Decision Support System</span>
+        </div>
+    </div>
+</nav>
+<!-- ================= PAGE ================= -->
+<main class="page index-page">
+
+    <!-- AGENTIC WORKFLOWS -->
+    <section>
+        <h2 class="section-title">🤖 Agentic Workflows</h2>
+
+        <div class="workflow-grid">
+            <div class="workflow-card">
+                <h3>📊 Candidate Readiness Evaluation</h3>
+                <p>Evaluates overall placement readiness using weighted skill scores and thresholds.</p>
+            </div>
+
+            <div class="workflow-card">
+                <h3>🎯 Role Suitability Recommendation</h3>
+                <p>Matches candidate profiles with suitable roles and highlights blocking skill gaps.</p>
+            </div>
+
+            <div class="workflow-card">
+                <h3>📝 Interview Feedback Analyzer</h3>
+                <p>Extracts strengths and gaps from interview feedback with a structured prep plan.</p>
+            </div>
+
+            <div class="workflow-card">
+                <h3>🚀 Placement Action Summary</h3>
+                <p>Generates prioritized next actions for placement and readiness improvement.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PURPOSE -->
+    <section class="card highlight-card">
+        <h2>🎯 Purpose</h2>
+        <p>
+            This application empowers <strong>placement managers</strong> to make
+            <strong>informed, data-backed decisions</strong> by analyzing multiple candidate
+            signals such as skill assessments, interview feedback, and role requirements.
+        </p>
+
+        <div class="info-box">
+            ⚠️ <strong>Important:</strong> This is a <em>decision-support copilot</em>, not an automated
+            decision-maker. Final decisions always remain with human experts.
+        </div>
+    </section>
+
+
+    <!-- FORM -->
+    <form method="POST">
+
+        <section class="card">
+            <h2>📈 Candidate Skill Scores</h2>
+            <p class="muted">
+                Provide scores between <strong>0–100</strong> for each skill domain to evaluate
+                overall placement readiness.
+            </p>
+
+            <div class="score-grid">
+
+                <div class="skill-input">
+                    <label>📊 Excel</label>
+                    <input type="number" name="excel" min="0" max="100" placeholder="e.g. 75" required>
+                    <small class="hint">Data handling & reporting</small>
+                </div>
+
+                <div class="skill-input">
+                    <label>🗄️ SQL</label>
+                    <input type="number" name="sql" min="0" max="100" placeholder="e.g. 70" required>
+                    <small class="hint">Querying & database logic</small>
+                </div>
+
+                <div class="skill-input">
+                    <label>🐍 Python</label>
+                    <input type="number" name="python" min="0" max="100" placeholder="e.g. 80" required>
+                    <small class="hint">Programming & problem-solving</small>
+                </div>
+
+                <div class="skill-input">
+                    <label>📐 Statistics & Probability</label>
+                    <input type="number" name="stats" min="0" max="100" placeholder="e.g. 65" required>
+                    <small class="hint">Analytical & mathematical reasoning</small>
+                </div>
+
+                <div class="skill-input">
+                    <label>🤖 Machine Learning</label>
+                    <input type="number" name="ml" min="0" max="100" placeholder="e.g. 60" required>
+                    <small class="hint">Modeling & predictive techniques</small>
+                </div>
+
+                <div class="skill-input">
+                    <label>📊 Tableau & Power BI</label>
+                    <input type="number" name="bi" min="0" max="100" placeholder="e.g. 72" required>
+                    <small class="hint">Data visualization & dashboards</small>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>💬 Mock Interview Feedback</h2>
+            <textarea
+                name="feedback"
+                rows="6"
+                placeholder="Example: Candidate demonstrated strong SQL and dashboarding skills. Python problem-solving and ML fundamentals need improvement. Communication was clear but explanations could be more structured."
+                required></textarea>
+        </section>
+
+        <button type="submit" class="cta-btn">
+            🚀 Run Placement Evaluation
+        </button>
+
+    </form>
+    
+
+    
+    <!-- ================= CREATOR SECTION ================= -->
+    <section class="card highlight-card">
+        <h2>👨‍💻 About the Creator</h2>
+
+        <p>
+            This Placement Operations Copilot was <strong>conceptualized, designed, and built</strong> as a
+            real-world, rule-based <strong>Agentic AI decision-support system</strong>.
+        </p>
+
+        <p>
+            <strong>Creator:</strong> Krunal Jadhav<br>
+            <strong>Role:</strong> AI & Data Science Engineer<br>
+            <strong>Focus Areas:</strong> Agentic AI, Data Science, ML Systems, Decision Support Tools
+        </p>
+
+        <p class="muted">
+            The goal of this project is to demonstrate how agent-based reasoning,
+            explainable heuristics, and modular system design can be applied to
+            real placement and hiring operations.
+        </p>
+    </section>
+
+    <footer>
+        © 2025 Placement Operations Copilot • Local Rule-Based Agentic AI • v1.0  
+        <br>
+        <span class="muted">
+            Built & Designed by <strong>Krunal Jadhav</strong> • AI & Data Science Engineer
+        </span>
+    </footer>
+
+</main>
+<!-- ================= ROLE REQUIREMENTS BUTTON ================= -->
+<a href="/requirements" class="requirements-btn">
+    📋 Role Requirements
+</a>
+
+</body>
+</html>

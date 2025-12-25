@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Placement Evaluation Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+ <!-- ================= Candidate Readiness ================= -->
+<div class="card readiness-card">
+
+    <!-- HEADER BOX -->
+    <div class="readiness-header-box">
+        <div>
+            <h2>Candidate Readiness</h2>
+            <p class="muted">Overall placement readiness assessment</p>
+        </div>
+        <span class="badge {{ readiness.status|lower }}">
+            {{ readiness.status }}
+        </span>
+    </div>
+
+    <!-- SCORE BOX -->
+    <div class="readiness-score-box">
+        <div class="score-row">
+            <span>Weighted Score</span>
+            <strong>{{ readiness.final_score }}</strong>
+        </div>
+        <div class="progress-bar">
+            <div class="progress" style="width: {{ readiness.final_score }}%"></div>
+        </div>
+    </div>
+
+    <!-- INSIGHTS BOX -->
+    <div class="readiness-insight-box">
+
+        <div class="insight-sub-box">
+    <h3>Reasoning</h3>
+    <ul class="bullet blue">
+
+        {% if readiness.final_score >= 85 %}
+            <li>Strong overall performance across core technical skills</li>
+            <li>Candidate demonstrates consistency and readiness for placement</li>
+            <li>Skill distribution aligns well with industry expectations</li>
+
+        {% elif readiness.final_score >= 70 %}
+            <li>Good foundational understanding across most evaluated skills</li>
+            <li>Performance is balanced but lacks depth in certain areas</li>
+            <li>Candidate is close to placement readiness</li>
+
+        {% else %}
+            <li>Insufficient performance in key technical skill areas</li>
+            <li>Skill gaps significantly impact placement readiness</li>
+            <li>Candidate requires focused preparation before placement</li>
+        {% endif %}
+
+    </ul>
+</div>
+
+
+        <div class="insight-sub-box">
+    <h3>Improvement Suggestions</h3>
+    <ul class="bullet amber">
+
+        {% if readiness.final_score >= 85 %}
+            <li>Focus on advanced problem-solving and case-based questions</li>
+            <li>Practice mock interviews to improve confidence and articulation</li>
+            <li>Refine resume and role-specific preparation</li>
+
+        {% elif readiness.final_score >= 70 %}
+            <li>Strengthen weaker skill areas identified in the breakdown</li>
+            <li>Improve speed and accuracy in problem-solving</li>
+            <li>Practice explaining solutions clearly during interviews</li>
+
+        {% else %}
+            <li>Rebuild fundamentals in core technical subjects</li>
+            <li>Follow a structured learning and practice plan</li>
+            <li>Delay placement attempts until readiness improves</li>
+        {% endif %}
+
+    </ul>
+</div>
+
+
+    </div>
+
+    <!-- SKILL BREAKDOWN BOX -->
+    <div class="readiness-skill-box">
+        <h3>Skill Breakdown</h3>
+
+        {% for skill, score in scores.items() %}
+        <div class="skill-row">
+            <span>{{ skill }}</span>
+            <div class="progress-bar small">
+                <div class="progress" style="width: {{ score }}%"></div>
+            </div>
+            <span>{{ score }} ({{ (weights[skill] * 100)|int }}% weight)</span>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+<!-- ================= Role Suitability ================= -->
+<div class="card role-suitability-card">
+
+    <div class="role-header">
+        <h2>Role Suitability</h2>
+
+        {% if readiness.status == "Ready" %}
+            <span class="role-summary success">
+                Candidate is suitable for immediate role consideration
+            </span>
+        {% elif readiness.status == "Almost" %}
+            <span class="role-summary warning">
+                Candidate is conditionally suitable for selected roles
+            </span>
+        {% else %}
+            <span class="role-summary danger">
+                Candidate is not yet suitable for target roles
+            </span>
+        {% endif %}
+    </div>
+
+    <p class="muted">
+        Role recommendations based on skill alignment, readiness score,
+        and gap analysis.
+    </p>
+
+    <div class="role-matrix">
+
+        <!-- ================= RECOMMENDED ================= -->
+        <div class="role-column success">
+
+            <h3>
+                Recommended Roles
+                <span class="count-badge">{{ recommended|length }}</span>
+            </h3>
+
+            {% if recommended %}
+                <p class="role-note">
+                    These roles align strongly with the candidate’s current skill profile
+                    and readiness level.
+                </p>
+
+                {% for role in recommended %}
+                <div class="role-item">
+                    <div>
+                        <strong>{{ role }}</strong>
+                        <p class="muted">
+                            Skills meet or exceed role expectations
+                        </p>
+                    </div>
+                    <span class="pill green">Strong Match</span>
+                </div>
+                {% endfor %}
+
+            {% else %}
+                <div class="role-empty">
+                    No roles meet the current readiness threshold.
+                </div>
+            {% endif %}
+
+        </div>
+
+        <!-- ================= NOT RECOMMENDED ================= -->
+        <div class="role-column danger">
+
+            <h3>Not Recommended</h3>
+
+            {% if rejected %}
+                <p class="role-note">
+                    These roles have critical skill gaps that must be addressed
+                    before reconsideration.
+                </p>
+
+                {% for role, gap_list in rejected.items() %}
+                <div class="role-item">
+                    <div>
+                        <strong>{{ role }}</strong>
+                        <p class="muted">Blocking skill gaps:</p>
+
+                        <div class="tags">
+                            {% for g in gap_list %}
+                                <span class="tag red">{{ g }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <span class="pill red">Low Match</span>
+                </div>
+                {% endfor %}
+
+            {% else %}
+                <div class="role-empty">
+                    No rejected roles identified.
+                </div>
+            {% endif %}
+
+        </div>
+
+    </div>
+</div>
+
+    <!-- ================= Interview Feedback ================= -->
+<!-- ================= Interview Feedback Analysis ================= -->
+<div class="interview-section">
+
+    <!-- Header -->
+    <div class="interview-header">
+        <h2>Interview Feedback Analysis</h2>
+        <p class="muted">Behavioral, technical, and communication insights</p>
+    </div>
+
+    <!-- ================= INSIGHTS ================= -->
+    <div class="interview-insight-grid">
+
+        <!-- Strengths -->
+        <div class="interview-box strength-box">
+            <h3>Strengths Observed</h3>
+
+            <ul>
+                {% if strengths %}
+                    {% for s in strengths %}
+                        <li>{{ s }}</li>
+                    {% endfor %}
+                {% else %}
+                    {% if readiness.status == "Ready" %}
+                        <li>Clear articulation of technical concepts</li>
+                        <li>Strong problem-solving approach</li>
+                        <li>Confident and structured communication</li>
+                    {% else %}
+                        <li class="muted">No strong positives identified yet</li>
+                    {% endif %}
+                {% endif %}
+            </ul>
+        </div>
+
+        <!-- Areas to Improve -->
+        <div class="interview-box improvement-box">
+            <h3>Areas to Improve</h3>
+
+            <ul>
+                {% if gaps %}
+                    {% for g in gaps %}
+                        <li>{{ g }}</li>
+                    {% endfor %}
+                {% else %}
+                    {% if readiness.status == "Almost" %}
+                        <li>Depth in advanced problem-solving scenarios</li>
+                        <li>Confidence under time pressure</li>
+                    {% elif readiness.status == "Not" %}
+                        <li>Core technical fundamentals</li>
+                        <li>Structured interview communication</li>
+                    {% else %}
+                        <li class="muted">No major gaps identified</li>
+                    {% endif %}
+                {% endif %}
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- ================= 7 DAY PLAN ================= -->
+    <div class="prep-plan-section">
+
+        <h2>7-Day Focused Preparation Plan</h2>
+
+        <div class="prep-grid">
+            {% if readiness.status == "Ready" %}
+
+                <div class="prep-card"><span>Day 1</span>Mock interviews with real-time feedback</div>
+                <div class="prep-card"><span>Day 2</span>Advanced problem-solving practice</div>
+                <div class="prep-card"><span>Day 3</span>SQL + Python optimization drills</div>
+                <div class="prep-card"><span>Day 4</span>Behavioral interview preparation</div>
+                <div class="prep-card"><span>Day 5</span>System & case-based questions</div>
+                <div class="prep-card"><span>Day 6</span>Final mock + resume walkthrough</div>
+                <div class="prep-card"><span>Day 7</span>Rest, revision, and confidence prep</div>
+
+            {% elif readiness.status == "Almost" %}
+
+                <div class="prep-card"><span>Day 1</span>Revise core technical concepts</div>
+                <div class="prep-card"><span>Day 2</span>Hands-on practice on weak areas</div>
+                <div class="prep-card"><span>Day 3</span>Problem-solving with time limits</div>
+                <div class="prep-card"><span>Day 4</span>Communication & explanation drills</div>
+                <div class="prep-card"><span>Day 5</span>Mock interview (technical focus)</div>
+                <div class="prep-card"><span>Day 6</span>Gap correction & concept revision</div>
+                <div class="prep-card"><span>Day 7</span>Final evaluation mock</div>
+
+            {% else %}
+
+                <div class="prep-card"><span>Day 1</span>Understand interview expectations</div>
+                <div class="prep-card"><span>Day 2</span>Build core subject fundamentals</div>
+                <div class="prep-card"><span>Day 3</span>Practice basic interview questions</div>
+                <div class="prep-card"><span>Day 4</span>Strengthen communication basics</div>
+                <div class="prep-card"><span>Day 5</span>Hands-on exercises & examples</div>
+                <div class="prep-card"><span>Day 6</span>Introductory mock interview</div>
+                <div class="prep-card"><span>Day 7</span>Review + learning roadmap creation</div>
+
+            {% endif %}
+        </div>
+
+    </div>
+
+</div>
+
+ <!-- ================= Placement Action Summary ================= -->
+<div class="action-summary-card">
+
+    <div class="action-header">
+        <h2>Placement Action Summary</h2>
+
+        {% if readiness.status == "Ready" %}
+            <span class="priority-pill priority-high">High Priority</span>
+        {% elif readiness.status == "Almost" %}
+            <span class="priority-pill priority-medium">Medium Priority</span>
+        {% else %}
+            <span class="priority-pill priority-low">Low Priority</span>
+        {% endif %}
+    </div>
+
+    <!-- Overall Recommendation -->
+    <div class="action-highlight">
+
+        {% if readiness.status == "Ready" %}
+            <strong>Placement Recommended</strong>
+            <p>
+                Candidate demonstrates strong readiness and can be confidently
+                moved forward for placement opportunities.
+            </p>
+
+        {% elif readiness.status == "Almost" %}
+            <strong>Conditional Placement Readiness</strong>
+            <p>
+                Candidate shows good potential but requires targeted improvement
+                in specific skill areas before placement.
+            </p>
+
+        {% else %}
+            <strong>Placement Not Recommended</strong>
+            <p>
+                Candidate currently lacks critical readiness benchmarks and
+                should undergo structured upskilling before reconsideration.
+            </p>
+        {% endif %}
+
+    </div>
+
+    <!-- Actions -->
+    <h3>Immediate Actions</h3>
+    <ul class="action-list">
+        {% for action in actions %}
+            <li class="action-item">{{ action }}</li>
+        {% endfor %}
+    </ul>
+
+</div>
+
+<a href="/" class="back-link">← Evaluate another candidate</a>
+
+</div>  
+
+<a href="/requirements" class="requirements-btn">
+    📋 Role Requirements
+</a>
+</body>
+</html>

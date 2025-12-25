@@ -1,0 +1,1437 @@
+/* ================= RESET ================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: radial-gradient(circle at top, #eef2ff, #f8fafc 40%);
+    color: #0f172a;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(226,232,240,0.8);
+    padding: 14px 40px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo {
+    background: linear-gradient(135deg, #6366f1, #2563eb);
+    color: white;
+    font-size: 18px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(99,102,241,0.45);
+}
+
+.nav-left h1 {
+    font-size: 24px;
+    font-weight: 900;
+    margin: 0;
+    letter-spacing: -0.4px;
+}
+
+.nav-left span {
+    font-size: 12.5px;
+    color: #64748b;
+}
+
+/* ================= PAGE (INDEX ONLY) ================= */
+.page.index-page {
+    max-width: 1320px;      /* premium SaaS standard */
+    margin: 0 auto;         /* center the content */
+    padding: 22px 28px 36px;
+}
+
+/* ================= CARDS ================= */
+.index-page .card {
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: blur(16px);
+    border-radius: 20px;
+    padding: 22px 26px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(226,232,240,0.9);
+    box-shadow:
+        0 1px 0 rgba(255,255,255,0.6) inset,
+        0 20px 40px rgba(15,23,42,0.10);
+}
+
+/* Highlight card */
+.index-page .highlight-card {
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.85),
+        rgba(248,250,252,0.85)
+    );
+    border-left: 5px solid #6366f1;
+}
+
+/* ================= HEADINGS ================= */
+.index-page h2 {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+}
+
+.section-title {
+    font-size: 23px;
+    font-weight: 900;
+    margin: 34px 0 18px;
+    letter-spacing: -0.4px;
+}
+
+/* ================= TEXT ================= */
+p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+    margin: 6px 0;
+}
+
+.muted {
+    font-size: 12.5px;
+    color: #64748b;
+}
+
+/* ================= INFO BOX ================= */
+.info-box {
+    margin-top: 12px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #eef2ff, #ffffff);
+    border: 1px solid #c7d2fe;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ================= WORKFLOWS ================= */
+.workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.workflow-card {
+    background: rgba(255,255,255,0.9);
+    border-radius: 18px;
+    padding: 18px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.25s ease;
+}
+
+.workflow-card h3 {
+    font-size: 15px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.workflow-card p {
+    font-size: 13px;
+}
+
+.workflow-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 45px rgba(99,102,241,0.25);
+}
+
+/* ================= BADGES ================= */
+.badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.badge {
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #eef2ff, #ffffff);
+    border: 1px solid #c7d2fe;
+    color: #3730a3;
+}
+
+/* ================= FORM ================= */
+.score-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.skill-input {
+    background: rgba(255,255,255,0.9);
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+}
+
+.skill-input label {
+    font-size: 13px;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.skill-input .hint {
+    font-size: 11px;
+    color: #64748b;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid #c7d2fe;
+    font-size: 14px;
+    background: rgba(255,255,255,0.9);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.25);
+}
+
+textarea {
+    min-height: 120px;
+}
+
+/* ================= CTA ================= */
+.cta-btn {
+    width: 100%;
+    margin-top: 18px;
+    padding: 15px;
+    border: none;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #6366f1, #2563eb);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 22px 45px rgba(99,102,241,0.45);
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* ================= FOOTER ================= */
+footer {
+    text-align: center;
+    margin-top: 26px;
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1100px) {
+    .workflow-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .score-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .workflow-grid,
+    .score-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page.index-page {
+        padding: 18px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================  result.html  ================================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= GLOBAL COMPACT MODE ================= */
+
+.container {
+    max-width: 1400px;    /* premium SaaS standard */
+    margin: 0 auto;         /* center the content */
+    padding: 22px 28px 36px;
+}
+
+/* Reduce card spacing */
+.card {
+    margin-bottom: 20px;     /* was ~48px */
+    padding: 18px 20px;      /* tighter padding */
+}
+
+
+
+
+
+/* ================= result CANDIDATE READINESS BOXES ================= */
+
+
+/* Target ONLY the first card (Candidate Readiness) */
+.container > .card:first-child {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+    padding: 34px 38px;
+    border-radius: 22px;
+    background: linear-gradient(
+        135deg,
+        #d1fae5 0%,
+        #ecfdf5 55%,
+        #ffffff 100%
+    );
+    border: 1px solid #bbf7d0;
+    box-shadow: 0 30px 60px rgba(16, 185, 129, 0.18);
+}
+
+/* Header alignment */
+.container > .card:first-child .card-header {
+    grid-column: 1 / -1;
+    margin-bottom: 10px;
+}
+
+/* Muted subtitle */
+.container > .card:first-child .muted {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: #065f46;
+}
+
+/* Score section */
+.container > .card:first-child .score-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.container > .card:first-child .score-row strong {
+    font-size: 64px;
+    font-weight: 900;
+    color: #064e3b;
+    line-height: 1;
+}
+
+.container > .card:first-child .score-row strong::after {
+    content: "/100";
+    font-size: 18px;
+    font-weight: 700;
+    margin-left: 6px;
+    color: #047857;
+}
+
+/* Progress bar */
+.container > .card:first-child .progress-bar {
+    height: 12px;
+    background: rgba(6, 95, 70, 0.15);
+    border-radius: 999px;
+    margin-top: 14px;
+}
+
+.container > .card:first-child .progress {
+    background: linear-gradient(
+        90deg,
+        #22c55e,
+        #16a34a
+    );
+}
+
+
+/* Right-side insights (Reasoning section reused visually) */
+.container > .card:first-child .section:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 18px;
+    padding: 22px 24px;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+/* Key Insights title */
+.container > .card:first-child .section:nth-of-type(2) h3 {
+    font-size: 18px;
+    font-weight: 900;
+    color: #065f46;
+    margin-bottom: 12px;
+}
+
+/* Bullet styling */
+.container > .card:first-child .bullet.blue li {
+    background: transparent;
+    padding-left: 18px;
+    font-weight: 600;
+    color: #064e3b;
+}
+
+.container > .card:first-child .bullet.blue li::before {
+    content: "➤";
+    color: #10b981;
+    font-size: 14px;
+}
+
+/* ================= BULLET LIST REFINEMENT ================= */
+
+.bullet li {
+    list-style: none;
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.bullet li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+}
+
+/* Color bullets */
+.bullet.green li::before { color: #22c55e; }
+.bullet.red li::before { color: #ef4444; }
+.bullet.blue li::before { color: #2563eb; }
+.bullet.amber li::before { color: #f59e0b; }
+
+
+
+/* Progress bar base */
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #2563eb, #4f46e5);
+    border-radius: 999px;
+}
+
+/* Smaller progress bars for skills */
+.progress-bar.small {
+    height: 8px;
+}
+
+
+.readiness-card {
+    padding: 24px;
+}
+
+/* Header box */
+.readiness-header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    border-radius: 18px;
+    background: #f8fafc;
+    margin-bottom: 18px;
+}
+
+/* Score box */
+.readiness-score-box {
+    padding: 20px;
+    border-radius: 18px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 20px;
+}
+
+/* Insight box (Reasoning + Suggestions) */
+.readiness-insight-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.insight-sub-box {
+    padding: 18px;
+    border-radius: 18px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+}
+
+/* Skill breakdown box */
+.readiness-skill-box {
+    padding: 20px;
+    border-radius: 18px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+}
+
+/* Skill row spacing fix */
+.readiness-skill-box .skill-row {
+    margin-top: 12px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .readiness-insight-box {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+/* ================= SKILL BREAKDOWN → 3 x 3 GRID ================= */
+
+/* Make skill container a grid */
+.readiness-skill-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px 22px;
+}
+
+/* Keep the heading full width */
+.readiness-skill-box > h3 {
+    grid-column: 1 / -1;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+/* Each skill becomes a compact card */
+.readiness-skill-box .skill-row {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Skill name */
+.readiness-skill-box .skill-row span:first-child {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* Progress bar spacing */
+.readiness-skill-box .progress-bar {
+    margin: 6px 0;
+}
+
+/* Score + weight */
+.readiness-skill-box .skill-row span:last-child {
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* Hover polish (optional but recommended) */
+.readiness-skill-box .skill-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(15,23,42,0.08);
+    transition: all 0.2s ease;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px) {
+    .readiness-skill-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .readiness-skill-box {
+        grid-template-columns: 1fr;
+    }
+}
+
+.readiness-reasoning-box,
+.readiness-improvement-box,
+.readiness-skill-box {
+    padding: 20px 22px;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 14px 30px rgba(15,23,42,0.06);
+}
+
+.readiness-reasoning-box h3,
+.readiness-improvement-box h3,
+.readiness-skill-box h3 {
+    font-size: 17px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    color: #0f172a;
+}
+
+.readiness-reasoning-box ul {
+    padding-left: 0;
+}
+
+.readiness-reasoning-box li {
+    list-style: none;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    padding-left: 22px;
+    position: relative;
+    color: #064e3b;
+}
+
+.readiness-reasoning-box li::before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 11px;
+    color: #22c55e;
+}
+
+.readiness-improvement-box li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    background: #fff7ed;
+    border-left: 4px solid #fb923c;
+    border-radius: 8px;
+    color: #7c2d12;
+}
+
+.readiness-skill-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+/* Heading full width */
+.readiness-skill-box h3 {
+    grid-column: 1 / -1;
+}
+
+
+.readiness-skill-box .skill-row {
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+}
+
+.readiness-skill-box .skill-row span:first-child {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.readiness-skill-box .skill-row span:last-child {
+    font-size: 11px;
+    color: #64748b;
+}
+
+.progress-bar.small {
+    height: 7px;
+    border-radius: 999px;
+    background: #e5e7eb;
+}
+
+.progress-bar.small .progress {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+
+
+
+
+/* ================= result ROLE SUITABILITY ================= */
+/* ================= ROLE SUITABILITY (REFINED) ================= */
+body {
+    background: linear-gradient(180deg, #f8fafc, #f1f5f9);
+}
+/* Card spacing */
+.card {
+    margin-top: 36px; /* reduced */
+    background: #ffffff;
+}
+
+/* Section title */
+.card > h2 {
+    font-size: 21px;
+    font-weight: 900;
+    margin-bottom: 4px;
+    color: #0f172a;
+}
+
+.card > .muted {
+    margin-bottom: 16px; /* reduced */
+    font-size: 13px;
+}
+
+/* Matrix layout */
+.role-matrix {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; /* reduced */
+    margin-top: 16px;
+}
+
+/* Columns */
+.role-column {
+    background: linear-gradient(180deg, #ffffff, #f9fafb);
+    border-radius: 18px; /* softer */
+    padding: 16px;       /* reduced */
+    border: 1px solid #e5e7eb;
+}
+
+/* Column headers */
+.role-column h3 {
+    font-size: 15px;
+    font-weight: 900;
+    margin-bottom: 12px; /* reduced */
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Success / Danger accents */
+.role-column.success {
+    border-left: 5px solid #22c55e;
+
+}
+
+.role-column.danger {
+    border-left: 5px solid #ef4444;
+}
+
+/* Role item */
+.role-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 14px;  /* reduced */
+    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 10px; /* reduced */
+    box-shadow: 0 6px 14px rgba(15,23,42,0.06); /* lighter */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.role-summary {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 999px;
+    line-height: 1;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.role-summary.success {
+    background: linear-gradient(135deg, #dcfce7, #ecfeff);
+    color: #166534;
+    box-shadow: 0 6px 14px rgba(34,197,94,0.25);
+}
+
+.role-summary.success::before {
+    content: "✔";
+    font-size: 12px;
+}
+
+.role-summary.warning {
+    background: linear-gradient(135deg, #fef3c7, #fffbeb);
+    color: #92400e;
+    box-shadow: 0 6px 14px rgba(245,158,11,0.25);
+}
+
+.role-summary.warning::before {
+    content: "⚠";
+    font-size: 12px;
+}
+
+.role-summary.danger {
+    background: linear-gradient(135deg, #fee2e2, #fff1f2);
+    color: #991b1b;
+    box-shadow: 0 6px 14px rgba(239,68,68,0.25);
+}
+
+.role-summary.danger::before {
+    content: "✖";
+    font-size: 12px;
+}
+
+
+.role-header + .muted {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 16px;
+}
+
+/* Hover */
+.role-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(15,23,42,0.10);
+}
+
+/* Role name */
+.role-item strong {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0f172a;
+    display: block;
+    margin-bottom: 2px;
+}
+
+/* Description */
+.role-item .muted {
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+/* Pills */
+.pill {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px; /* reduced */
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+/* Strong match */
+.pill.green {
+    background: #dcfce7;
+    color: #166534;
+}
+
+/* Low match */
+.pill.red {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Gap tags */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px; /* reduced */
+}
+
+.tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 999px;
+}
+
+.tag.red {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+    .role-matrix {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== PAGE BACKGROUND ===== */
+
+
+/* Card background refinement */
+.card {
+    background: #ffffff;
+}
+
+
+/* ================= ROLE ITEMS – DEFAULT (≤3 items) ================= */
+
+/* ================= ROLE COLUMN BASE ================= */
+
+.role-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* Normal list when items are 3 or less */
+.role-column .role-item {
+    width: 100%;
+}
+
+/* ================= AUTO SWITCH TO 2x2 WHEN >3 ================= */
+/* Create a grid ONLY for role cards when count > 3 */
+.role-column:has(.role-item:nth-of-type(4)) {
+    gap: 14px;
+}
+
+/* Grid container for role cards only */
+.role-column:has(.role-item:nth-of-type(4)) {
+    display: block;
+}
+
+/* Turn ONLY role items into grid */
+.role-column:has(.role-item:nth-of-type(4)) .role-item {
+    margin: 0;
+}
+
+/* Wrap role items visually into grid */
+.role-column:has(.role-item:nth-of-type(4)) {
+    position: relative;
+}
+
+.role-column:has(.role-item:nth-of-type(4))::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* Grid only for role cards */
+.role-column:has(.role-item:nth-of-type(4)) .role-item {
+    width: calc(50% - 6px);
+    float: left;
+}
+
+/* Spacing */
+.role-column:has(.role-item:nth-of-type(4)) .role-item:nth-child(odd) {
+    margin-right: 12px;
+}
+
+.role-column:has(.role-item:nth-of-type(4)) .role-item:nth-child(even) {
+    margin-right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= result second last thing interview analysis================= */
+
+
+/* ================= INTERVIEW SECTION ================= */
+
+.interview-section {
+    background: linear-gradient(180deg, #ffffff, #f8fafc);
+    border-radius: 24px;
+    padding: 32px;
+    border: 1px solid #e5e7eb;
+}
+
+/* Header */
+.interview-header h2 {
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 4px;
+}
+
+.interview-header .muted {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* Insight Grid */
+.interview-insight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 26px 0 36px;
+}
+
+/* Boxes */
+.interview-box {
+    border-radius: 18px;
+    padding: 22px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+}
+
+.interview-box h3 {
+    font-size: 17px;
+    font-weight: 900;
+    margin-bottom: 14px;
+}
+
+/* Strengths */
+.strength-box {
+    border-left: 6px solid #22c55e;
+}
+
+.strength-box li {
+    background: #f0fdf4;
+    border-left: 4px solid #22c55e;
+}
+
+/* Improvements */
+.improvement-box {
+    border-left: 6px solid #ef4444;
+}
+
+.improvement-box li {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+}
+
+/* Lists */
+.interview-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.interview-box li {
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* ================= PREP PLAN ================= */
+/* ================= 7-DAY PREPARATION PLAN ================= */
+
+.prep-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 20px;
+}
+
+/* Card */
+.prep-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 26px 28px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 16px 32px rgba(15,23,42,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover (subtle, not jumpy) */
+.prep-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 26px 48px rgba(15,23,42,0.12);
+}
+
+/* LEFT SOFT ACCENT (not aggressive) */
+.prep-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 18px;
+    bottom: 18px;
+    width: 5px;
+    border-radius: 5px;
+    background: #4f46e5;
+}
+
+/* TEXT RESET */
+.prep-card {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+    line-height: 1.6;
+}
+
+/* MAKE "Day X" A LABEL, NOT MAIN TEXT */
+.prep-card strong,
+.prep-card b {
+    display: block;
+    font-size: 12px;
+    font-weight: 800;
+    color: #4f46e5;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .prep-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================= FIX DAY LABEL ================= */
+
+/* Base card (keep yours, this just refines text) */
+.prep-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 22px 26px;
+    border-radius: 22px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 16px 32px rgba(15,23,42,0.08);
+}
+
+/* Target "Day X" at start of text */
+.prep-card::before {
+    content: attr(data-day);
+}
+
+/* Make Day label look like a badge */
+.prep-card {
+    position: relative;
+}
+
+/* Style the "Day X" text itself */
+.prep-card strong,
+.prep-card b {
+    display: inline-block;
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 900;
+    padding: 6px 12px;
+    border-radius: 999px;
+    margin-right: 12px;
+    letter-spacing: 0.4px;
+    box-shadow: 0 6px 14px rgba(37,99,235,0.35);
+}
+
+/* Task text */
+.prep-card {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+    line-height: 1.6;
+}
+
+/* Hover polish */
+.prep-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 26px 48px rgba(15,23,42,0.12);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .prep-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================= SECTION SPACING FIX ================= */
+
+/* Space AFTER 7-Day Plan */
+.prep-plan-wrapper,
+.prep-grid {
+    margin-bottom: 48px;
+}
+
+/* Space BEFORE Placement Action Summary */
+.action-summary-card {
+    margin-top: 28px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ================= result last thing ACTION SUMMARY ================= */
+/* ================= PLACEMENT ACTION SUMMARY ================= */
+
+.action-summary-card {
+    position: relative;
+    background: linear-gradient(180deg, #ffffff, #f8fafc);
+    border-radius: 24px;
+    padding: 32px 34px;
+    border: 1px solid #e5e7eb;
+    box-shadow:
+        0 20px 40px rgba(15,23,42,0.08),
+        inset 0 0 0 1px rgba(255,255,255,0.6);
+}
+
+/* Header */
+.action-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.action-header h2 {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.4px;
+    margin: 0;
+    color: #0f172a;
+}
+
+/* ================= PRIORITY PILL ================= */
+
+.priority-pill {
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.priority-high {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #ffffff;
+}
+
+.priority-medium {
+    background: linear-gradient(135deg, #facc15, #f59e0b);
+    color: #78350f;
+}
+
+.priority-low {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #ffffff;
+}
+
+/* ================= HIGHLIGHT BOX ================= */
+
+.action-highlight {
+    position: relative;
+    padding: 24px 26px;
+    border-radius: 18px;
+    margin: 24px 0 32px;
+    background: linear-gradient(135deg, #eef2ff, #ffffff);
+    border-left: 6px solid #6366f1;
+    box-shadow:
+        inset 0 0 0 1px rgba(99,102,241,0.14),
+        0 14px 30px rgba(15,23,42,0.08);
+}
+
+.action-highlight::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6);
+    pointer-events: none;
+}
+
+.action-highlight strong {
+    display: block;
+    font-size: 17px;
+    font-weight: 900;
+    margin-bottom: 8px;
+    color: #3730a3;
+}
+
+.action-highlight p {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #1e293b;
+}
+
+/* ================= IMMEDIATE ACTIONS ================= */
+
+.action-summary-card h3 {
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 16px;
+    color: #0f172a;
+}
+
+/* Action list */
+.action-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Action item */
+.action-item {
+    position: relative;
+    background: linear-gradient(180deg, #ffffff, #f9fafb);
+    padding: 18px 20px 18px 48px;
+    border-radius: 16px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+    border-left: 6px solid #22c55e;
+    box-shadow:
+        0 10px 22px rgba(15,23,42,0.08),
+        inset 0 0 0 1px rgba(226,232,240,0.7);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover micro-interaction */
+.action-item:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 18px 36px rgba(15,23,42,0.12),
+        inset 0 0 0 1px rgba(226,232,240,0.8);
+}
+
+/* Check icon */
+.action-item::before {
+    content: "✓";
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 14px rgba(34,197,94,0.45);
+}
+
+/* ================= BACK LINK ================= */
+
+.back-link {
+    display: inline-block;
+    margin-top: 36px;
+    font-weight: 800;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+    .action-summary-card {
+        padding: 24px;
+    }
+
+    .action-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+/* ================= ROLE REQUIREMENTS FLOATING BUTTON ================= */
+
+.requirements-btn {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 999;
+
+    padding: 14px 18px;
+    border-radius: 999px;
+
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+
+    box-shadow: 0 14px 32px rgba(37,99,235,0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover */
+.requirements-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(37,99,235,0.55);
+}
+
+/* Mobile safe */
+@media (max-width: 600px) {
+    .requirements-btn {
+        bottom: 18px;
+        right: 18px;
+        font-size: 13px;
+        padding: 12px 16px;
+    }
+}

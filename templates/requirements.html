@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Role Skill Requirements</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='requirements.css') }}">
+</head>
+<body>
+
+<nav class="req-navbar">
+    <h1>📋 Role Skill Requirements</h1>
+    <p>Minimum skill thresholds used by the Placement Operations Copilot</p>
+</nav>
+
+<main class="req-page">
+
+    {% for role, skills in ROLE_REQUIREMENTS.items() %}
+    <section class="req-role-card">
+
+        <div class="req-role-header">
+            <h2>{{ role }}</h2>
+            <span class="req-badge">Minimum Criteria</span>
+        </div>
+
+        <div class="req-skill-grid">
+            {% for skill, value in skills.items() %}
+            <div class="req-skill-item">
+                <span class="req-skill-name">{{ skill }}</span>
+                <div class="req-progress">
+                    <div class="req-progress-fill" style="width: {{ value }}%"></div>
+                </div>
+                <span class="req-score">{{ value }}%</span>
+            </div>
+            {% endfor %}
+        </div>
+
+    </section>
+    {% endfor %}
+
+</main>
+
+<footer class="req-footer">
+    These thresholds are used as baseline criteria for role suitability decisions.
+</footer>
+
+</body>
+</html>
