@@ -104,40 +104,11 @@ ROLE_REQUIREMENTS = {
 
 ---
 
-flowchart TD
-    A[Start Application] --> B[User Inputs Candidate Data]
+User Input → Score Analysis → Feedback Analysis
+→ Readiness Evaluation → Role Suitability
+→ Strengths & Gaps → Preparation Plan
+→ Placement Action Summary → Final Report
 
-    B --> C[Assessment Scores<br/>(Excel, SQL, Python, Stats)]
-    B --> D[Interview Feedback Text]
-
-    C --> E[Compute Overall Score]
-    D --> F[Analyze Feedback Text]
-
-    E --> G[Candidate Readiness Evaluation]
-    F --> G
-
-    G --> H{Readiness Status?}
-
-    H -->|Ready| I[Recommend Active Placement]
-    H -->|Almost Ready| J[Suggest Re-mock & Improvements]
-    H -->|Not Ready| K[Assign Preparation Plan]
-
-    C --> L[Role Suitability Analysis]
-    L --> M[Recommend Best-Fit Roles]
-    L --> N[Identify Blocked Roles & Skill Gaps]
-
-    F --> O[Extract Strengths & Gaps]
-    O --> P[Generate 7-Day Preparation Plan]
-
-    I --> Q[Placement Action Summary]
-    J --> Q
-    K --> Q
-    M --> Q
-    N --> Q
-    P --> Q
-
-    Q --> R[Display Structured Decision Report]
-    R --> S[End]
 
 ## ▶️ How to Run
 
