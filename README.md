@@ -127,6 +127,8 @@ ROLE_REQUIREMENTS = {
 ```
 
 ---
+## 📂 Project Structure
+
 
 ```
 
@@ -178,6 +180,7 @@ AI & Data Science Engineer
 ## ⚠️ Disclaimer
 
 This system provides **decision support only** and does not replace human judgment.
+
 
 
 
