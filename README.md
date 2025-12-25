@@ -52,30 +52,9 @@ The system follows a **modular agent-based architecture**, where each agent hand
 - Supports placement decision-making
 
 ---
-flowchart LR
-    A[User] --> B[Enter Skills & Feedback]
 
-    B --> C[Readiness Evaluation]
-    C --> C1[Weighted Score]
-    C1 --> C2[Ready / Almost / Not Ready]
-
-    B --> D[Role Suitability Check]
-    D --> D1[Compare with Role Requirements]
-    D1 --> D2[Recommended Roles]
-    D1 --> D3[Rejected Roles]
-
-    B --> E[Feedback Analysis]
-    E --> E1[Strengths]
-    E --> E2[Gaps]
-    E --> E3[7-Day Plan]
-
-    C2 --> F[Action Generator]
-    D2 --> F
-    E3 --> F
-
-    F --> G[Final Result Dashboard]
 ## 🎯 Tech Stack
-<p align="center"> <!-- Core Language & Backend --> <img src="https://img.shields.io/badge/Python-Core%20Language-3776AB?style=for-the-badge&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/Flask-Backend%20Engine-black?style=for-the-badge&logo=flask"/>  </p> <p align="center"> <!-- Frontend --> <img src="https://img.shields.io/badge/HTML5-UI%20Structure-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-Premium%20UI-1572B6?style=for-the-badge&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/Jinja2-Templating-B41717?style=for-the-badge"/> </p> <p align="center"> <!-- AI & Data --> <img src="https://img.shields.io/badge/Rule--Based%20AI-Agentic%20Logic-yellow?style=for-the-badge"/> <img src="https://img.shields.io/badge/Numpy-Scoring%20Logic-013243?style=for-the-badge&logo=numpy&logoColor=white"/> </p> <p align="center"> <!-- Tooling --> <img src="https://img.shields.io/badge/GitHub-Version%20Control-181717?style=for-the-badge&logo=github"/> </p>>
+<p align="center"> <!-- Core Language & Backend --> <img src="https://img.shields.io/badge/Python-Core%20Language-3776AB?style=for-the-badge&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/Flask-Backend%20Engine-black?style=for-the-badge&logo=flask"/>  </p> <p align="center"> <!-- Frontend --> <img src="https://img.shields.io/badge/HTML5-UI%20Structure-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-Premium%20UI-1572B6?style=for-the-badge&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/Jinja2-Templating-B41717?style=for-the-badge"/> </p> <p align="center"> <!-- AI & Data --> <img src="https://img.shields.io/badge/Rule--Based%20AI-Agentic%20Logic-yellow?style=for-the-badge"/> <img src="https://img.shields.io/badge/Numpy-Scoring%20Logic-013243?style=for-the-badge&logo=numpy&logoColor=white"/> </p> <p align="center"> <!-- Tooling --> <img src="https://img.shields.io/badge/GitHub-Version%20Control-181717?style=for-the-badge&logo=github"/> </p>
 
 ## 📊 Skill Scoring Rules
 
@@ -182,6 +161,7 @@ AI & Data Science Engineer
 This system provides **decision support only** and does not replace human judgment.
 
 
+    
 
 
 
