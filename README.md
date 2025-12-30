@@ -58,23 +58,64 @@ The system follows a **modular agent-based architecture**, where each agent hand
 
 
 ---
-## 🖼 Dashboard Screenshots
+## 📸 Application Screenshots
 
-### Crime in India – Overview
----
-![Crime Dashboard Overview](Screenshot%202025-12-30%20033006.png)
+Below are selected screenshots showcasing the key workflows and UI of the **Placement Operations Copilot**.
 
-### Crime Trend & Victim Analysis
 ---
-![Crime Trend Analysis](Screenshot%202025-12-30%20033026.png)
 
-### Property Crime Analysis
----
-![Property Crime Analysis](Screenshot%202025-12-30%20033034.png)
+### 🧠 Agentic Workflow Overview
+> High-level view of the agentic decision-support modules used in the system.
 
-### Area-wise Focused View
+![Agentic Workflows](screenshots/Screenshot%202025-12-31%20011737.png)
+
 ---
-![State Wise Analysis](Screenshot%202025-12-30%20033049.png)
+
+### 🎯 Candidate Skill Input Dashboard
+> Structured input interface for capturing multi-skill assessment scores.
+
+![Candidate Skill Scores](screenshots/Screenshot%202025-12-31%20011759.png)
+
+---
+
+### 🔁 End-to-End Evaluation Flow and 🗣️ Mock Interview Feedback Input
+> Complete flow from candidate input to final placement recommendation.
+> Text-based interview feedback used for qualitative analysis.
+
+![End-to-End Flow](screenshots/Screenshot%202025-12-31%20012908.png)
+
+---
+
+### 📊 Candidate Readiness & Weighted Score
+> Overall readiness evaluation with weighted scoring and reasoning.
+![Role Suitability](screenshots/Screenshot%202025-12-31%20012603.png)
+
+
+---
+
+### ✅ Role Suitability Recommendations
+> Recommended and blocked roles with explicit skill gap explanations.
+
+![Candidate Readiness](screenshots/Screenshot%202025-12-31%20012438.png)
+
+---
+
+### 🧠 Interview Feedback Analysis & 📅 7-Day Focused Preparation Plan
+> Extracted strengths, improvement areas, and targeted preparation insights.
+> Structured preparation roadmap generated from feedback analysis.
+
+![Preparation Plan](screenshots/Screenshot%202025-12-31%20012634.png)
+
+---
+
+
+### 🚀 Placement Action Summary
+> Final consolidated decision-support output with prioritized next actions.
+
+![Placement Action Summary](screenshots/Screenshot%202025-12-31%20012644.png)
+
+---
+
 
 
 ---
@@ -94,7 +135,14 @@ SKILL_WEIGHTS = {
 ---
 
 ## 📋 Role Requirements
+---
 
+### 🧩 Role Skill Requirements
+> Minimum skill thresholds defined for each supported role.
+
+![Role Skill Requirements](screenshots/Screenshot%202025-12-31%20011940.png)
+
+---
 ```python
 ROLE_REQUIREMENTS = {
     "Data Analyst": {
@@ -184,6 +232,7 @@ This system provides **decision support only** and does not replace human judgme
 
 
     
+
 
 
 
